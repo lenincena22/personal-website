@@ -1,0 +1,124 @@
+.contact-content {
+  padding: 12rem;
+}
+
+.contact-content_title {
+  color: #ff9c24;
+  font-size: 18px;
+}
+
+.contact-content_heading {
+  color: #0c3658;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.contact-content_container-left-number-details p,
+.contact-content_container-left-mail-details p,
+.contact-content_container-left-location-details p {
+  color: #4e4949;
+  font-size: 14px;
+}
+
+.contact-content_container-left-number,
+.contact-content_container-left-mail,
+.contact-content_container-left-location {
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.contact-content_container-left-number-icon,
+.contact-content_container-left-mail-icon,
+.contact-content_container-left-location-icon {
+  background-color: white;
+  margin: 1rem;
+  padding: 0.2rem;
+}
+
+fieldset,
+legend {
+  color: #4e4949;
+}
+
+.contact-content_container {
+  display: flex;
+  gap: 1rem;
+}
+
+.contact-content_container > * {
+  flex: 1;
+}
+
+input,
+textarea {
+  outline: none;
+  border: none;
+  text-decoration: none;
+  width: max-content;
+}
+
+.submit-btn {
+  background-color: #ff9c24;
+  color: white;
+  font-weight: 300;
+  padding: 5px 30px 5px 30px;
+  margin-top: 2rem;
+}
+
+form {
+  margin-top: 0.3rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .contact-content {
+    padding: 4rem;
+  }
+
+  .contact-content_heading {
+    font-size: 20px;
+  }
+
+  .contact-content_container {
+    flex-direction: column-reverse;
+  }
+
+  .contact-content_container-left,
+  .contact-content_container-right {
+    width: 100%;
+  }
+
+  .contact-content_container-left,
+  .contact-content_container-right form {
+    margin: 0;
+  }
+}
+
+/* Mobile responsiveness */
+
+@media only screen and (max-width: 412px) {
+  .contact-content {
+    padding: 4rem;
+  }
+
+  .contact-content_heading {
+    font-size: 20px;
+  }
+
+  .contact-content_container {
+    flex-direction: column;
+  }
+
+  .contact-content_container-left,
+  .contact-content_container-right {
+    width: 100%;
+  }
+
+  .contact-content_container-left,
+  .contact-content_container-right form {
+    margin: 0;
+  }
+}
