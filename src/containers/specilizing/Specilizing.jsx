@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./specilizing.css";
 import ui_design from "../../assets/icons/icons8-ui-design-45.png";
 import graphic_design from "../../assets/icons/icons8-graphic-45.png";
 import web_design from "../../assets/icons/icons8-web-design-45.png";
 
 const Specilizing = () => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
-    <div className="specilizing-content" id="specilizing">
+    <div
+      className={`specilizing-content ${mounted ? "fadeIn" : ""}`}
+      id="specilizing"
+    >
       <p className="specilizing-content_title">WHAT I DO</p>
       <p className="specilizing-content_heading">Specilizing In</p>
       <div className="specilizing-content_container">

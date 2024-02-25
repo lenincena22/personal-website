@@ -24,9 +24,9 @@ function App() {
       <Specilizing />
       <Resume />
       <Portfolio />
-      <Testimonal />
+      {/* <Testimonal /> */}
       <OrangeBar />
-      <Blog />
+      {/* <Blog /> */}
       <Contact />
       <Footer />
     </div>

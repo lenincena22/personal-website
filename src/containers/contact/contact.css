@@ -122,3 +122,128 @@ form {
     margin: 0;
   }
 }
+
+/* Contact form animation */
+.contact-content_container-right {
+  animation: slideInRight 1s ease-in-out;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+/* Contact details animation */
+.contact-content_container-left {
+  animation: slideInLeft 1s ease-in-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+/* Form field animation */
+input,
+textarea {
+  transition: all 0.3s ease-in-out;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #ff9c24;
+  box-shadow: 0 0 5px rgba(255, 156, 36, 0.5);
+}
+
+/* Submit button animation */
+.submit-btn {
+  transition: all 0.3s ease-in-out;
+}
+
+.submit-btn:hover {
+  background-color: #ff8200;
+}
+
+/* Responsive animation adjustments */
+@media only screen and (max-width: 768px) {
+  .contact-content_container-right,
+  .contact-content_container-left {
+    animation: none;
+  }
+}
+
+.contact-content {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.contact-content.visible {
+  opacity: 1;
+}
+
+.contact-content_container-left,
+.contact-content_container-right {
+  opacity: 0;
+}
+
+.contact-content_container-left.visible,
+.contact-content_container-right.visible {
+  animation: slideIn 1s ease-in-out;
+  opacity: 1;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add other styles as per your previous CSS */
+
+.contact-content {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.contact-content.visible {
+  opacity: 1;
+}
+
+.contact-content_container-left,
+.contact-content_container-right {
+  opacity: 0;
+}
+
+.contact-content_container-left.visible,
+.contact-content_container-right.visible {
+  animation: slideIn 1s ease-in-out;
+  opacity: 1;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

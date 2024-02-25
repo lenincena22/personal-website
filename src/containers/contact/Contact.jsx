@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import emailjs from "emailjs-com";
 import phone from "../../assets/icons/icons8-call-25.png";
 import mail from "../../assets/icons/icons8-mail-25.png";
@@ -6,9 +6,27 @@ import location from "../../assets/icons/icons8-location-25.png";
 import "./contact.css";
 
 const Contact = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const contactRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (contactRef.current) {
+        const topPos = contactRef.current.getBoundingClientRect().top;
+        const screenHeight = window.innerHeight;
+        setIsVisible(topPos < screenHeight);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Trigger initial check
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const sendEmail = (e) => {
     e.preventDefault();
-
     emailjs
       .sendForm(
         "service_jmym124",
@@ -26,12 +44,21 @@ const Contact = () => {
       );
     e.target.reset();
   };
+
   return (
-    <div className="contact-content" id="contact">
+    <div
+      className={`contact-content ${isVisible ? "visible" : ""}`}
+      id="contact"
+      ref={contactRef}
+    >
       <p className="contact-content_title">CONTACT ME</p>
       <p className="contact-content_heading">Get In Touch</p>
       <div className="contact-content_container">
-        <div className="contact-content_container-left">
+        <div
+          className={`contact-content_container-left ${
+            isVisible ? "visible" : ""
+          }`}
+        >
           <div className="contact-content_container-left-number">
             <div className="contact-content_container-left-number-icon">
               <img src={phone} alt="" />
@@ -62,7 +89,11 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div className="contact-content_container-right">
+        <div
+          className={`contact-content_container-right ${
+            isVisible ? "visible" : ""
+          }`}
+        >
           <form action="" onSubmit={sendEmail}>
             <fieldset className="fieldset1">
               <legend className="name">Your Name*</legend>
